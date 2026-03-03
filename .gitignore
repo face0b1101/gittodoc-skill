@@ -1,0 +1,16 @@
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# MkDocs build output
+site/
+
+.env
