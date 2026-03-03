@@ -140,9 +140,9 @@ Concise policy reference for all coding agents touching this repository. Keep re
 
 ### 3. Collaboration Etiquette
 
-- If another agent has edited a file, read their changes and build on them—do not revert or overwrite.
+- If another agent has edited a file, read their changes and build on them-do not revert or overwrite.
 - Coordinate before touching large refactors that might conflict with ongoing work.
-- Prefer `apply_patch` (or notebook editing tools) so diffs stay minimal and reviewable.
+- Keep diffs minimal and reviewable; use targeted edits rather than rewriting whole files.
 
 ### 4. Git & Commits
 
@@ -151,13 +151,12 @@ Concise policy reference for all coding agents touching this repository. Keep re
 - For new files: `git restore --staged :/ && git add <paths> && git commit -m "<msg>" -- <paths>`.
 - Quote any paths containing brackets/parentheses when staging to avoid globbing.
 - Never amend existing commits unless the user instructs you to.
+- Don't plaster all commits and git issues with "Made with Cursor", "Cursor helped me with this", "AI did everything" or anything similar.
 
 ### 5. Pre-flight Checklist
 
 1. Read the task, confirm assumptions, and outline the approach.
 2. Inspect the relevant files (include imports/configs for context).
-3. Run the documented commands (`make lint`, `make test`, etc.) after code changes; backend targets use uv from `backend/pyproject.toml`.
-   Backend commands: `make install-backend`, `make lint-backend`, `make test-backend`.
+3. Run the documented commands after code changes:
+   `make install`, `make lint`, `make format`, `make test`, `make precommit`, `make check`.
 4. Summarise edits, mention tests, and flag follow-up work in the final response.
-
-Refer to `docs/prompts/WELCOME_PROMPT.md` for initial context prompts.
