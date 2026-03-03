@@ -1,7 +1,6 @@
 # Project Rules
 
 > **Single Source of Truth** for AI coding assistants (Claude Code, Cursor, etc.)
-> `.cursorrules` points here - no need to maintain two files.
 
 ______________________________________________________________________
 
@@ -12,7 +11,6 @@ ______________________________________________________________________
 
    - Run `bd ready` to see available work before starting
    - Reference issues in commits: `[bd-XX] description`
-   - See `/docs/workflows/BEADS_ISSUE_TRACKER.md` for full guide
 
 2. Check if `./specify/` folder exists.
    If it exists, this project uses **speckit** for specification-driven development.
@@ -41,8 +39,6 @@ bd close [id] -r "reason"   # Close with reason
 - Before starting work: `bd ready`
 - Reference in commits: `[bd-XX] description`
 - After completing: `bd close bd-XX -r "Done"`
-
-See `docs/BEADS_ISSUE_TRACKER.md` for full guide.
 
 ______________________________________________________________________
 
@@ -157,6 +153,5 @@ Concise policy reference for all coding agents touching this repository. Keep re
 
 1. Read the task, confirm assumptions, and outline the approach.
 2. Inspect the relevant files (include imports/configs for context).
-3. Run the documented commands after code changes:
-   `make install`, `make lint`, `make format`, `make test`, `make precommit`, `make check`.
+3. Review changes for spelling, formatting, and consistency before committing.
 4. Summarise edits, mention tests, and flag follow-up work in the final response.
