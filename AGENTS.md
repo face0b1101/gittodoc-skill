@@ -1,6 +1,6 @@
 # Project Rules
 
-> **Single Source of Truth** for AI coding assistants (Claude Code, Cursor, etc.)
+> **Single Source of Truth** for AI coding assistants
 
 ______________________________________________________________________
 
@@ -147,7 +147,7 @@ Concise policy reference for all coding agents touching this repository. Keep re
 - For new files: `git restore --staged :/ && git add <paths> && git commit -m "<msg>" -- <paths>`.
 - Quote any paths containing brackets/parentheses when staging to avoid globbing.
 - Never amend existing commits unless the user instructs you to.
-- Don't plaster all commits and git issues with "Made with Cursor", "Cursor helped me with this", "AI did everything" or anything similar.
+- Don't plaster all commits and git issues with "Made with AI", "AI did everything" or anything similar.
 
 ### 5. Pre-flight Checklist
 

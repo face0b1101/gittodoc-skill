@@ -1,6 +1,6 @@
 # Gittodoc Skill
 
-Markdown-based skill that teaches AI coding assistants (Cursor, Claude Code etc.) and desktop apps (Claude Desktop) how to use [gittodoc.com](https://gittodoc.com) to convert GitHub repositories into plain-text documentation for context ingestion — no SDK, API key, or MCP required.
+Agent Skill that teaches AI assistants how to use [gittodoc.com](https://gittodoc.com) to convert GitHub repositories into plain-text documentation for context ingestion — no SDK, API key, or MCP required.
 
 ## What's in it
 
@@ -35,7 +35,30 @@ The assistant reads the skill, writes the `curl` commands, runs them, and explai
 
 ## Installation
 
-### Claude Desktop (no git required)
+### Personal skill (all projects)
+
+Clone into the shared skills directory:
+
+```bash
+git clone https://github.com/face0b1101/gittodoc-skill.git \
+  ~/.agents/skills/gittodoc
+```
+
+Compatible agents (Cursor, Claude Code, VS Code, Codex, and others) scan `~/.agents/skills/` automatically per the [Agent Skills convention](https://agentskills.io/client-implementation/adding-skills-support).
+
+### Project skill (one repo)
+
+From your project root:
+
+```bash
+git clone https://github.com/face0b1101/gittodoc-skill.git /tmp/gittodoc-skill
+mkdir -p .agents/skills/gittodoc
+cp /tmp/gittodoc-skill/SKILL.md .agents/skills/gittodoc/
+```
+
+Commit the `.agents/skills/gittodoc/` directory so your team gets it too.
+
+### Claude Desktop
 
 1. Download the zip from the [latest release](https://github.com/face0b1101/gittodoc-skill/releases/latest)
 2. In Claude, go to **Settings > Capabilities** and ensure **Code execution** is enabled
@@ -43,46 +66,9 @@ The assistant reads the skill, writes the `curl` commands, runs them, and explai
 
 Claude will automatically use the skill when your prompt involves gittodoc or repo ingestion. See [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude) for more detail.
 
-### Cursor
+### Verify
 
-Clone into the Cursor skills directory:
-
-```bash
-git clone https://github.com/face0b1101/gittodoc-skill.git \
-  ~/.cursor/skills/gittodoc
-```
-
-Cursor loads skills from `~/.cursor/skills/` automatically.
-
-### Claude Code — personal skill (all projects)
-
-```bash
-git clone https://github.com/face0b1101/gittodoc-skill.git /tmp/gittodoc-skill
-mkdir -p ~/.claude/skills/gittodoc
-cp /tmp/gittodoc-skill/SKILL.md ~/.claude/skills/gittodoc/
-```
-
-### Claude Code — project skill (one repo)
-
-From your project root:
-
-```bash
-git clone https://github.com/face0b1101/gittodoc-skill.git /tmp/gittodoc-skill
-mkdir -p .claude/skills/gittodoc
-cp /tmp/gittodoc-skill/SKILL.md .claude/skills/gittodoc/
-```
-
-Commit the `.claude/skills/gittodoc/` directory so your team gets it too.
-
-### Verify (Claude Code)
-
-Restart Claude Code, then run:
-
-```text
-/skills
-```
-
-You should see `gittodoc` in the list.
+After installing, check that your agent can see the skill. In Claude Code, run `/skills` and confirm `gittodoc` appears in the list.
 
 ## Why a skill and not MCP?
 
